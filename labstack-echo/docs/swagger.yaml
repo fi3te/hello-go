@@ -1,0 +1,72 @@
+basePath: /
+definitions:
+  main.User:
+    properties:
+      forename:
+        type: string
+      id:
+        type: integer
+      surename:
+        type: string
+    type: object
+info:
+  contact:
+    name: API Support
+    url: https://github.com/fi3te/hello-go
+  description: A sample server that uses the Go web framework Echo.
+  title: Echo example
+  version: "1.0"
+paths:
+  /:
+    get:
+      operationId: home
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+      summary: Home
+      tags:
+      - General
+  /secret:
+    get:
+      operationId: secret
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+      summary: Secret
+      tags:
+      - General
+  /users:
+    get:
+      operationId: listUsers
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/main.User'
+            type: array
+      summary: Lists all users
+      tags:
+      - Users
+  /users/:id:
+    get:
+      operationId: getUser
+      parameters:
+      - description: Id of the user
+        in: path
+        name: id
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/main.User'
+      summary: Returns a specific user
+      tags:
+      - Users
+swagger: "2.0"
