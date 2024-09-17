@@ -5,9 +5,9 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/fi3te/hello-go/pkg/playground"
-	"github.com/fi3te/hello-go/pkg/printer"
-	"github.com/fi3te/hello-go/pkg/weather"
+	"github.com/fi3te/hello-go/standard/pkg/playground"
+	"github.com/fi3te/hello-go/standard/pkg/printer"
+	"github.com/fi3te/hello-go/standard/pkg/weather"
 )
 
 const serverPort = 4200
