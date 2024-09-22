@@ -1,0 +1,5 @@
+package: main
+output: demo_client.gen.go
+generate:
+  client: true
+  models: true
