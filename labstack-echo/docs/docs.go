@@ -72,7 +72,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/users/:id": {
+        "/users/{id}": {
             "get": {
                 "tags": [
                     "Users"
@@ -109,7 +109,7 @@ const docTemplate = `{
                 "id": {
                     "type": "integer"
                 },
-                "surename": {
+                "surname": {
                     "type": "string"
                 }
             }

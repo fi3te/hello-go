@@ -1,0 +1,84 @@
+openapi: 3.0.1
+info:
+  title: Echo example
+  description: A sample server that uses the Go web framework Echo.
+  contact:
+    name: API Support
+    url: https://github.com/fi3te/hello-go
+  version: "1.0"
+servers:
+- url: /
+paths:
+  /:
+    get:
+      tags:
+      - General
+      summary: Home
+      operationId: home
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: string
+  /secret:
+    get:
+      tags:
+      - General
+      summary: Secret
+      operationId: secret
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: string
+  /users:
+    get:
+      tags:
+      - Users
+      summary: Lists all users
+      operationId: listUsers
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/main.User'
+  /users/{id}:
+    get:
+      tags:
+      - Users
+      summary: Returns a specific user
+      operationId: getUser
+      parameters:
+      - name: id
+        in: path
+        description: Id of the user
+        required: true
+        schema:
+          type: integer
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/main.User'
+components:
+  schemas:
+    main.User:
+      type: object
+      properties:
+        forename:
+          type: string
+        id:
+          type: integer
+        surname:
+          type: string
+x-original-swagger-version: "2.0"

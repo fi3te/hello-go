@@ -6,7 +6,7 @@ definitions:
         type: string
       id:
         type: integer
-      surename:
+      surname:
         type: string
     type: object
 info:
@@ -52,7 +52,7 @@ paths:
       summary: Lists all users
       tags:
       - Users
-  /users/:id:
+  /users/{id}:
     get:
       operationId: getUser
       parameters:
