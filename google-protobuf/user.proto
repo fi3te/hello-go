@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package main;
+
+option go_package = "/user";
+
+message User {
+    int64 id = 1;
+    string forename = 2;
+    string surname = 3;
+    int32 age = 4;
+    repeated string mailAddresses = 5;
+}
